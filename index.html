@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta San Valentín</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f08deb;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #d5006d;
+            margin-bottom: 20px;
+        }
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: heartbeat 1.5s infinite;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #d5006d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        button:hover {
+            background-color: #b20058;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        #noButton {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Hola Coty!</h1>
+    <p>Desde que entraste en mi vida, soy el hombre mas feliz del mundo. Cada momento que paso con vos es mas especial que el otro...</p>
+    <p>Y quiero saber si me harías el honor de ser mi San Valentín.</p>
+    <div class="heart">❤️</div>
+    <p>¿Queres ser mi San Valentín?</p>
+    
+    <!-- Botón de aceptación -->
+    <button onclick="respuesta()">Sí, obvio!</button>
+    
+    <!-- Botón de rechazo con la función de esquivar -->
+    <button id="noButton" onclick="esquivar()">No</button>
+
+    <script>
+        // Función para la respuesta afirmativa
+        function respuesta() {
+            alert("¡Sabia que ibas a decir que si! Te Amo Siempre, Konitoo.");
+        }
+
+        // Función para hacer que el botón 'No' esquive el mouse
+        function esquivar() {
+            let noButton = document.getElementById('noButton');
+            let maxX = window.innerWidth - noButton.offsetWidth;
+            let maxY = window.innerHeight - noButton.offsetHeight;
+
+            // Generar nuevas posiciones aleatorias dentro de la ventana
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            // Mover el botón a una nueva posición
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
